@@ -1,0 +1,6 @@
+---
+# The variables file used by the playbooks in the dbservers group.
+# These don't have to be explicitly imported by vars_files: they are autopopulated.
+
+databasepublicip: 192.168.56.142
+publicip: 192.168.56.141

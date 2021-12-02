@@ -1,0 +1,78 @@
+---
+# This playbook will install mysql and create db user and give permissions.
+
+- name: Install Mysql package
+  apt:
+    update_cache: true
+    name: ['mysql-server', 'python3-pip']
+    state: present
+- name: Make sure pymysql is present
+  become: true # needed if the other tasks are not played as root
+  pip:
+    name: pymysql
+    state: present
+
+- name: Create Mysql configuration file
+  template:
+    src: my.cnf.j2
+    dest: /etc/my.cnf
+  notify:
+  - restart mysql
+
+- name: (DATABASE) Allow remote hosts to connect (Debian)
+  lineinfile:
+    path: /etc/mysql/mysql.conf.d/mysqld.cnf
+    backrefs: yes
+    regexp: '^bind-address'
+    line: 'bind-address            = 0.0.0.0'
+    state: present
+  notify: restart mysql
+
+- name: Start Mysql Service
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+
+- name: Sets the root password
+  no_log: true
+  mysql_user:
+    name: root
+    password: "{{ mysql_root_password }}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+  ignore_errors: yes
+
+
+#- name: Removes all anonymous user accounts
+#  mysql_user:
+#    name: ''
+#    host_all: yes
+#    state: absent
+
+
+#- name: Removes the MySQL test database
+#  mysql_db:
+#    name: test
+#    state: absent
+
+
+
+
+- name: Create Application Database
+  mysql_db:
+    name: "{{ dbname }}"
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+    state: present
+
+- name: Create Application DB User
+  no_log: true
+  mysql_user:
+    name: "{{ dbuser }}"
+    password: "{{ upassword }}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+    priv: "*.*:ALL"
+    host: '%'
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
