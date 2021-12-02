@@ -1,1 +1,44 @@
 # demoAnsible
+
+## Setup
+
+- Install Virtualbox
+- Install vagrant
+- Install ansible
+- Start the VMs using vagrant
+
+
+```bash
+git clone https://github.com/barais/demoAnsible
+cd vagrant
+vagant up
+# Check that the VM are up
+# Check that you can login using ssh (ssh vagrant@192.168.56.141 # password: vagrant)
+```
+
+## Demo 1
+
+```bash
+ansible-playbook playbook.yml -i hosts
+```
+
+Try to access http://192.168.56.141/info.php
+
+## Demo 2
+
+- Kill the VMs and remove them.
+- Use vagrant to recreate them from scratch
+
+```bash
+git clone https://github.com/barais/demoAnsible
+cd vagrant
+vagant up
+# Check that the VM are up
+# Check that you can login using ssh (ssh vagrant@192.168.56.141 # password: vagrant)
+```
+
+```bash
+ansible-playbook site.yml -i hosts
+```
+
+Try to access http://192.168.56.141/index.php
