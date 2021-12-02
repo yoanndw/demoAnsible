@@ -18,6 +18,8 @@ vagant up
 
 ## Demo 1
 
+Run the playbook
+
 ```bash
 ansible-playbook playbook.yml -i hosts
 ```
@@ -36,6 +38,8 @@ vagant up
 # Check that the VM are up
 # Check that you can login using ssh (ssh vagrant@192.168.56.141 # password: vagrant)
 ```
+
+Run the playbook
 
 ```bash
 ansible-playbook site.yml -i hosts
