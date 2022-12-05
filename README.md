@@ -24,7 +24,7 @@ Run the playbook
 ansible-playbook playbook.yml -i hosts
 ```
 
-Try to access http://192.168.56.141/info.php
+Try to access http://192.168.56.141/index.php
 
 ## Demo 2
 
