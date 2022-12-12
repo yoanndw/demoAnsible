@@ -4,15 +4,17 @@
 
 Ce TP est une introduction pratique à Ansible. Le but est d'observer le déploiement automatisé à l'aide d'Ansible. Ce TP est donné dans le cadre du cours  [TLC](https://hackmd.diverse-team.fr/s/SJqu5DjSD) au [département d'Informatique et d'Electronique](https://istic.univ-rennes1.fr/) de l'[Université de Rennes 1](https://www.univ-rennes1.fr/). 
 
-## Enoncé
+## Enoncé
 
-- **Tâche 0**. Créer deux machines virtuelle (https://vm.istic.univ-rennes1.fr/ séléctionner **ubuntu22** comme image de base), l'accès au port 22 se fera au travers du [VPN](https://istic.univ-rennes1.fr/intranet/services#section-4). 
+### Tâche 0
+
+Créer deux machines virtuelle (https://vm.istic.univ-rennes1.fr/ séléctionner **ubuntu22** comme image de base), l'accès au port 22 se fera au travers du [VPN](https://istic.univ-rennes1.fr/intranet/services#section-4). 
 
 Une fois que vous avez créer ces machines, vérifier que vous avez accès à ces machines en ssh avec les instructions reçues par email. 
 
 
 
-- **Tâche 1**.
+### Tâche 1
 
 En s'inspirant du playbooks disponible [ici](https://github.com/barais/demoAnsible/tree/main/lamp_ubuntu1804_2hosts_withroles), déployer cette simple application ansible sur vos vms. 
 
@@ -32,7 +34,7 @@ ansible-playbook site.yml -i hosts
 Essayer d'accéder à http://ADRESSE_IP_DE_VOTRE_VM_WEB/index.php
 
 
-- **Tâche 2**.
+### Tâche 2
 
 Créer un nouveau playbook pour installer micok8S sur votre VM. 
 
@@ -83,7 +85,7 @@ The new configuration should be loaded with a Docker daemon restart:
 sudo systemctl restart docker
 ```
 
-- **Tâche 3**.
+### Tâche 3
 
 Pour les plus gerriers, révisez votre playbook ansible pour utiliser le module suivant
 https://galaxy.ansible.com/gepaplexx/microk8s
