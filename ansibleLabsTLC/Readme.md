@@ -1,6 +1,6 @@
 # TP Ansible
 
-## Objectif du TP
+## Objectif du TP
 
 Ce TP est une introduction pratique à Ansible. Le but est d'observer le déploiement automatisé à l'aide d'Ansible. Ce TP est donné dans le cadre du cours  [TLC](https://hackmd.diverse-team.fr/s/SJqu5DjSD) au [département d'Informatique et d'Electronique](https://istic.univ-rennes1.fr/) de l'[Université de Rennes 1](https://www.univ-rennes1.fr/). 
 
@@ -18,7 +18,7 @@ En s'inspirant du playbooks disponible [ici](https://github.com/barais/demoAnsib
 
 Sur votre portable : 
 
-``bash
+```bash
 apt-get install ansible
 git clone https://github.com/barais/demoAnsible
 cd demoAnsible/lamp_ubuntu1804_2hosts_withroles
