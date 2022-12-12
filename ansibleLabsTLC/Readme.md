@@ -12,6 +12,7 @@ Créer deux machines virtuelle (https://vm.istic.univ-rennes1.fr/ séléctionner
 
 Une fois que vous avez créer ces machines, vérifier que vous avez accès à ces machines en ssh avec les instructions reçues par email. 
 
+De manière alternative, vous pouvez utiliser VirtualBox et le script Vagrant fourni dans ce repositor pour créer ces VMs.
 
 
 ### Tâche 1
