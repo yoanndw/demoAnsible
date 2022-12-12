@@ -1,7 +1,7 @@
 # ####################################################################
 # ################### CONFIGURATION VARIABLES ########################
 # ####################################################################
-IMAGE_NAME = "bento/ubuntu-18.04"   # Image to use
+IMAGE_NAME = "bento/ubuntu-22.04"   # Image to use
 MEM = 2048                          # Amount of RAM
 CPU = 1                             # Number of processors
 SLAVE_NBR = 2                       # Number of slaves node
