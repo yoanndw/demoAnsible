@@ -16,14 +16,14 @@ Une fois que vous avez créer ces machines, vérifier que vous avez accès à ce
 
 ### Tâche 1
 
-En s'inspirant du playbooks disponible [ici](https://github.com/barais/demoAnsible/tree/main/lamp_ubuntu1804_2hosts_withroles), déployer cette simple application ansible sur vos vms. 
+En s'inspirant du playbooks disponible [ici](https://github.com/barais/demoAnsible/tree/main/lamp_ubuntu2204_2hosts_withroles), déployer cette simple application ansible sur vos vms. 
 
 Sur votre portable : 
 
 ```bash
 apt-get install ansible
 git clone https://github.com/barais/demoAnsible
-cd demoAnsible/lamp_ubuntu1804_2hosts_withroles
+cd demoAnsible/lamp_ubuntu2204_2hosts_withroles
 # edit the hosts to put the IP of your VMs and the login and password
 nano -w hosts
 ansible-playbook site.yml -i hosts
