@@ -1,18 +1,18 @@
 [webservers]
-192.168.56.141 
+ydewildetlc1.istic.univ-rennes1.fr 
 [dbservers]
-192.168.56.142
+ydewildetlc2.istic.univ-rennes1.fr 
 
 [webservers:vars]
 ansible_connection=ssh
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
-ansible_become_pass=vagrant
+ansible_ssh_user=zprojet
+ansible_ssh_pass="{{ lookup('env', 'VM_PASSWORD') }}"
+ansible_become_pass="{{ lookup('env', 'VM_PASSWORD') }}"
 ansible_python_interpreter=/usr/bin/python3
 
 [dbservers:vars]
 ansible_connection=ssh
-ansible_ssh_user=vagrant
-ansible_ssh_pass=vagrant
-ansible_become_pass=vagrant
+ansible_ssh_user=zprojet
+ansible_ssh_pass="{{ lookup('env', 'VM_PASSWORD') }}"
+ansible_become_pass="{{ lookup('env', 'VM_PASSWORD') }}"
 ansible_python_interpreter=/usr/bin/python3
