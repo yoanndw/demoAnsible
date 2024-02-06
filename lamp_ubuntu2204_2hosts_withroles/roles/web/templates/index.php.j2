@@ -15,9 +15,11 @@ echo  "List of Databases: </BR>";
                 $link = mysqli_connect('{{ databasepublicip }}', '{{ hostvars[host].dbuser }}', '{{ hostvars[host].upassword }}') or die(mysqli_connect_error($link));
         {% endfor %}
         $res = mysqli_query($link, "SHOW DATABASES;");
+        echo "<ul>";
         while ($row = mysqli_fetch_assoc($res)) {
-                echo $row['Database'] . "\n";
+                echo "<li>" . $row['Database'] . "</li>";
         }
+        echo "</ul>";
 ?>
 </body>
 </html>
