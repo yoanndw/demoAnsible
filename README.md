@@ -21,7 +21,3 @@ Yoann DEWILDE
     ```sh
     ansible-playbook -i hosts site.yml
     ```
-
-## Tâche 3
-
-Le code et les instructions d'installation sont sur ce dépôt : https://github.com/yoanndw/TPDockerSampleApp.
